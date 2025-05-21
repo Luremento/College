@@ -8,23 +8,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Place extends Model
 {
-     use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'name',
-        'type',
-        'amount',
-        'cost',
-    ];
+    protected $fillable = ['name', 'type', 'amount', 'cost'];
 
-    public function comments(): HasMany
+    public function orders(): HasMany
     {
         return $this->hasMany(Order::class);
     }
-
 }

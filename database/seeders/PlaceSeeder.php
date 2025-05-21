@@ -15,4 +15,8 @@ class PlaceSeeder extends Seeder
     {
         \App\Models\Place::factory(10)->create();
     }
+
+    
 }
+
+
